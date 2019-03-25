@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Les_closures</title>
+
+	<style>
+      div {
+        display: none;
+        margin: 5px;
+      }
+    </style>
+</head>
+<body>
+
+
+<div>Elément 0</div>
+    <div>Elément 1</div>
+    <div>Elément 2</div>
+    <div>Elément 3</div>
+    <div>Elément 4</div>
+    <div>Elément 5</div>
+    <div>Elément 6</div>
+    <div>Elément 7</div>
+    <div>Elément 8</div>
+    <div>Elément 9</div>
+
+
+	<script type="text/javascript">
+
+
+		function area(){
+
+			var myVar = 1;
+
+			function show(){
+
+
+				alert(myVar);
+			}
+
+			setTimeout(show,1000);
+		}
+
+		area(); // On exucute la fonction, ce qui crée la variable "myVar"
+
+   var number = 1;
+
+   setTimeout(function(){
+
+
+   	alert(number);
+   },100);
+
+   number++;
+
+   var divs = document.getElementsByTagName('div'),
+   	divslen = divs.length;
+
+   for (var i = 0; i < divslen; i++){
+
+   		(function(i){
+
+
+   		
+
+   	setTimeout(function(){
+
+   		divs[i].style.display = 'block';
+
+   	}, 200*i); // Le temps augmentera de 200 ms à chaque élément
+		
+})(i);
+
+}
+
+	</script>
+   
+
+</body>
+</html>
